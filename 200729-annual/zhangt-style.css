@@ -311,6 +311,7 @@
 }
 
 .mathjax-exps {
+    font-size: 24px !important;
     color: var(--magenta) !important;
 }
 
