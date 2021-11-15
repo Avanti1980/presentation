@@ -251,24 +251,29 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 间隔和宽打散维
 
-<br>
-
 启示：VC 维分布无关、数据独立，导出的泛化界有点“松”
 
 方案：引入数据相关的量加强泛化界，在无穷维空间也可以学习
 
 <br>
 
-<p class="theorem markdown="1">设$\Hcal = \{ h: \Xcal \mapsto \Rbb \}$是定义在特征空间$\Xcal$上的实值函数集合，对于$\forall h \in \Hcal$，其关于样本$(\xv_i, y_i)$的<span class="blue">间隔</span>定义为$\gamma_i = y_i f(\xv_i)$</p>
+<div class="theorem">
+
+设$\Hcal = \{ h: \Xcal \mapsto \Rbb \}$是定义在特征空间$\Xcal$上的实值函数集合，对于$\forall h \in \Hcal$，其关于样本$(\xv_i, y_i)$的<span class="blue">间隔</span>定义为$\gamma_i = y_i f(\xv_i)$
+
+</div>
 
 <br>
 
-<p class="theorem markdown="1">若对数据集$\Scal$的任一类别标记赋值，均存在假设$h \in \Hcal$和$\gamma > 0$使得$y_i h(\xv_i) \ge \gamma$，则称$\Scal$被$\Hcal$以$\gamma$打散，$\Hcal$的<span class="blue">宽打散维</span>$\mathrm{fat}_\Fcal(\gamma)$是能被$\Hcal$以$\gamma$打散的最大集合的大小<br><br>特别的，取$\Hcal = \{ \xv \mapsto \wv^\top \xv \mid \|\wv\| = 1 \}$，则能将$\Scal$以$\gamma$打散的超平面称为$\gamma$-间隔超平面，即对$\forall i \in [m]$有$y_i \wv^\top \xv_i \ge \gamma$</p>
+<div class="theorem">
+
+若对数据集$\Scal$的任一类别标记赋值，均存在假设$h \in \Hcal$和$\gamma > 0$使得$y_i h(\xv_i) \ge \gamma$，则称$\Scal$被$\Hcal$以$\gamma$打散，$\Hcal$的<span class="blue">宽打散维</span>$\mathrm{fat}_\Fcal(\gamma)$是能被$\Hcal$以$\gamma$打散的最大集合的大小<br><br>特别的，取$\Hcal = \{ \xv \mapsto \wv^\top \xv \mid \|\wv\| = 1 \}$，则能将$\Scal$以$\gamma$打散的超平面称为$\gamma$-间隔超平面，即对$\forall i \in [m]$有$y_i \wv^\top \xv_i \ge \gamma$
+
+</div>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
-<!-- slide vertical=true data-notes="从这张图不难看出，γ是所有间隔的最小值，也称为最小间隔
- <br><br> 可以证明，如果数据集包含在半径为R的球里，γ间隔超平面的宽打散维有一个上界，分母上的γ是个正数，所以这个上界是个有限值 <br><br> 所以宽打散维是VC维的加强版，对假设空间的限制力度更强，对于前面所说的VC维无穷的情况，宽打散维也是有限的。而宽打散维与间隔有关，间隔越大，宽打散维越小，对假设空间限制越大"-->
+<!-- slide vertical=true data-notes="从这张图不难看出，γ是所有间隔的最小值，也称为最小间隔 <br><br> 可以证明，如果数据集包含在半径为R的球里，γ间隔超平面的宽打散维有一个上界，分母上的γ是个正数，所以这个上界是个有限值 <br><br> 所以宽打散维是VC维的加强版，对假设空间的限制力度更强，对于前面所说的VC维无穷的情况，宽打散维也是有限的。而宽打散维与间隔有关，间隔越大，宽打散维越小，对假设空间限制越大"-->
 
 HEADER $\gamma$-间隔超平面
 
@@ -332,20 +337,7 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 正则化
 
-```dot
-digraph g {
-    graph [nodesep=0.35, ranksep=0.25]
-    rankdir=LR
-    node [shape=plaintext fontname="EBG,fzlz" fontcolor="#b58900" fontsize=18]
-    edge [arrowhead=vee color="#586e75" fontname="EBG,fzlz" fontcolor="#268bd2" fontsize=12 arrowsize=0.5]
-    bgcolor="transparent"
-
-    限制假设空间 -> VC维
-    VC维 -> 宽打散维 [label="加强"]
-    宽打散维 -> 最大间隔准则 -> 最小范数假设
-
-}
-```
+@import "../dot/vc2margin.dot"
 
 $$
 \begin{align*}
@@ -434,7 +426,7 @@ $$
 \end{align*}
 $$
 
-<div class="width48 left4 top6">
+<div class="width48 left0 top6">
 
 - 经验风险为零后，继续加入新的基分类器，泛化风险还能得到改善
 - 基分类器越多，模型越复杂，越容易过拟合
@@ -442,7 +434,7 @@ $$
 
 </div>
 
-<img src="../tikz/adaboost.svg" class="lefta top-20per right8 width42">
+<img src="../tikz/adaboost.svg" class="lefta top-23per right8 width42">
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -458,15 +450,19 @@ $$
 \end{align*}
 $$
 
-<p class="theorem top4">
-    对任意$\delta > 0$，$\theta > 0$，$f \in \Hcal$和IID采样于$\Dcal$的$m$个训练样本组成的数据集$\Scal$，
-    $$
-    \begin{align*}
-        \class{red}{R(f)} \leq \class{blue}{\underbrace{\Pbb_\Scal (y f(\xv) \leq \theta)}_{最小间隔越大，该项越小}} + \class{yellow}{O \left( \sqrt{ \frac{\ln m \ln |\Hcal|}{m \theta^2} + \frac{1}{m} \ln \frac{1}{\delta} } \right)}
-    \end{align*}
-    $$
-    至少以$1 - \delta$的概率成立
-</p>
+<div class="theorem top4">
+
+对任意$\delta > 0$，$\theta > 0$，$f \in \Hcal$和 IID 采样于$\Dcal$的$m$个训练样本组成的数据集$\Scal$，
+
+$$
+\begin{align*}
+    \class{red}{R(f)} \leq \class{blue}{\underbrace{\Pbb_\Scal (y f(\xv) \leq \theta)}_{最小间隔越大，该项越小}} + \class{yellow}{O \left( \sqrt{ \frac{\ln m \ln |\Hcal|}{m \theta^2} + \frac{1}{m} \ln \frac{1}{\delta} } \right)}
+\end{align*}
+$$
+
+至少以$1 - \delta$的概率成立
+
+</div>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -476,10 +472,9 @@ HEADER 间隔理论 <span style="font-size:0.7em">[Breiman, NC'99]</span>
 
 直接考虑<span class="blue">最小间隔$\theta_0 = \min_i y_i f(\xv_i)$</span>
 
-<br>
+<div class="theorem top4 bottom4">
 
-
-对任意$\delta > 0$，$\theta_0 > 4 \sqrt{2 / |\Hcal|}$，$B = 32 \ln 2|\Hcal| / m \theta_0^2 \leq 2m$，$f \in \Hcal$和IID采样于$\Dcal$的$m$个训练样本组成的数据集$\Scal$，
+对任意$\delta > 0$，$\theta_0 > 4 \sqrt{2 / |\Hcal|}$，$B = 32 \ln 2|\Hcal| / m \theta_0^2 \leq 2m$，$f \in \Hcal$和 IID 采样于$\Dcal$的$m$个训练样本组成的数据集$\Scal$，
 
 $$
 \begin{align*}
@@ -489,7 +484,7 @@ $$
 
 至少以$1 - \delta$的概率成立
 
-<br>
+</div>
 
 最小间隔的重要性：
 
@@ -512,14 +507,14 @@ HEADER 间隔理论</span>
 
 挽救 [Reyzin & Schapire, ICML'06]
 
-- Breiman 的实验没有有效控制基分类器(<span class="blue">分类回归树</span>的复杂度
+- Breiman 的实验没有有效控制基分类器 (<span class="blue">分类回归树</span>的复杂度)
 - Reyzin 和 Schapire 采用<span class="blue">决策树桩</span>为基分类器重做 Breiman 的实验
 - 最小间隔：Arc-gv 优于 AdaBoost
 - 间隔分布：AdaBoost 优于 Arc-gv
 
 <br>
 
-间隔分布更为重要$\longrightarrow$证明更紧的基于间隔分布的泛化界
+间隔分布更为重要 → 证明更紧的基于间隔分布的泛化界
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -527,22 +522,27 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 间隔理论 <span style="font-size:0.7em">[Gao & Zhou, AIJ'13]</span>
 
-<p class="theorem top4">
-对任意$\delta > 0$，$m \geq 5$，$f \in \Hcal$和IID采样于未知分布$\Dcal$的$m$个训练样本组成的数据集$\Scal$，
+<div class="theorem top4">
+
+对任意$\delta > 0$，$m \geq 5$，$f \in \Hcal$和 IID 采样于未知分布$\Dcal$的$m$个训练样本组成的数据集$\Scal$，
+
 $$
 \begin{align*}
     \begin{split}
-        R(f) & \leq \frac{2}{m} + \inf_{\theta \in (0,1]} \left\{ \Pbb_\Scal (y f(\xv) <\theta) + \frac{7 \mu + 3 \sqrt{3 \mu}}{3m} \right. \\ & \qquad \qquad \qquad \qquad + \left. \sqrt{\frac{3\mu}{m} \Pbb_D (y f(\xv) <\theta)} \right\} 
-    \end{split} 
+        R(f) & \leq \frac{2}{m} + \inf_{\theta \in (0,1]} \left\{ \Pbb_\Scal (y f(\xv) <\theta) + \frac{7 \mu + 3 \sqrt{3 \mu}}{3m} \right. \\ & \qquad \qquad \qquad \qquad + \left. \sqrt{\frac{3\mu}{m} \Pbb_D (y f(\xv) <\theta)} \right\}
+    \end{split}
 \end{align*}
 $$
+
 至少以$1 - \delta$的概率成立，其中
+
 $$
-\begin{align*} 
-    \mu = \frac{8}{\theta^2} \ln m \ln (2 |\Hcal|) + \ln \frac{2|\Hcal|}{\delta} 
+\begin{align*}
+    \mu = \frac{8}{\theta^2} \ln m \ln (2 |\Hcal|) + \ln \frac{2|\Hcal|}{\delta}
 \end{align*}
 $$
-</p>
+
+</div>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -576,29 +576,27 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 研究动机
 
-<div class="multi_column">
-    <div class="width16">
-        <p>Boosting 算法</p>
-        <ul class="left4">
-            <li>最小间隔$\not \longrightarrow$良好的泛化性能</li>
-            <li>间隔分布更为重要</li>
-        </ul>
-        <p class="top4">大间隔方法</p>
-        <ul class="left4">
-            <li>以最小间隔为优化目标</li>
-            <li>间隔分布$\longrightarrow$更好的泛化性能？</li>
-        </ul>
-        <p class="top4">如何优化间隔分布？</p>
-        <ul class="left4">
-            <li>一阶统计量：间隔<span class="blue">均值</span></li>
-            <li>二阶统计量：间隔<span class="blue">方差</span></li>
-            <li>$\max$间隔<span class="blue">均值</span>$\wedge$$\min$间隔<span class="blue">方差</span></li>
-        </ul>
-    </div>
-    <div class="width17 top4" style="display:flex;flex-direction:column">
-        <img src="../tikz/motivation1.svg" class="width30 left0">
-    </div>
-</div>
+Boosting 算法
+
+- 最小间隔 ↛ 良好的泛化性能
+- 间隔分布更为重要
+
+<div class="bottom4"></div>
+
+大间隔方法
+
+- 以最小间隔为优化目标
+- 间隔分布 → 更好的泛化性能？
+
+<div class="bottom4"></div>
+
+如何优化间隔分布？
+
+- 一阶统计量：间隔<span class="blue">均值</span>
+- 二阶统计量：间隔<span class="blue">方差</span>
+- 最大化间隔<span class="blue">均值</span>、最小化间隔<span class="blue">方差</span>
+
+<img src="../tikz/motivation1.svg" class="width45 lefta right8 top-45per">
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -606,32 +604,31 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 研究动机
 
-<div class="multi_column">
-    <div class="width16">
-        <p>Boosting 算法</p>
-        <ul class="left4">
-            <li>最小间隔$\not \longrightarrow$良好的泛化性能</li>
-            <li>间隔分布更为重要</li>
-        </ul>
-        <p class="top4">大间隔方法</p>
-        <ul class="left4">
-            <li>以最小间隔为优化目标</li>
-            <li>间隔分布$\longrightarrow$更好的泛化性能？</li>
-        </ul>
-        <p class="top4">如何优化间隔分布？</p>
-        <ul class="left4">
-            <li>一阶统计量：间隔<span class="blue">均值</span></li>
-            <li>二阶统计量：间隔<span class="blue">方差</span></li>
-            <li>$\max$间隔<span class="blue">均值</span>$\wedge$$\min$间隔<span class="blue">方差</span></li>
-        </ul>
-    </div>
-    <div class="width17 top4" style="display:flex;flex-direction:column">
-        <img src="../tikz/motivation2.svg" class="width30 left0">
-        <p class="top4 left10">
-            $h_{\min} \leftarrow$优化<span class="red">最小间隔</span>
-        </p>
-    </div>
-</div>
+Boosting 算法
+
+- 最小间隔 ↛ 良好的泛化性能
+- 间隔分布更为重要
+
+<div class="bottom4"></div>
+
+大间隔方法
+
+- 以最小间隔为优化目标
+- 间隔分布 → 更好的泛化性能？
+
+<div class="bottom4"></div>
+
+如何优化间隔分布？
+
+- 一阶统计量：间隔<span class="blue">均值</span>
+- 二阶统计量：间隔<span class="blue">方差</span>
+- 最大化间隔<span class="blue">均值</span>、最小化间隔<span class="blue">方差</span>
+
+<img src="../tikz/motivation2.svg" class="width45 lefta right8 top-45per">
+
+<p class="top2 lefta right18">
+    $h_{\min}$ ← 优化<span class="red">最小间隔</span>
+</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -639,32 +636,32 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 研究动机
 
-<div class="multi_column">
-    <div class="width16">
-        <p>Boosting 算法</p>
-        <ul class="left4">
-            <li>最小间隔$\not \longrightarrow$良好的泛化性能</li>
-            <li>间隔分布更为重要</li>
-        </ul>
-        <p class="top4">大间隔方法</p>
-        <ul class="left4">
-            <li>以最小间隔为优化目标</li>
-            <li>间隔分布$\longrightarrow$更好的泛化性能？</li>
-        </ul>
-        <p class="top4">如何优化间隔分布？</p>
-        <ul class="left4">
-            <li>一阶统计量：间隔<span class="blue">均值</span></li>
-            <li>二阶统计量：间隔<span class="blue">方差</span></li>
-            <li>$\max$间隔<span class="blue">均值</span>$\wedge$$\min$间隔<span class="blue">方差</span></li>
-        </ul>
-    </div>
-    <div class="width17 top4" style="display:flex;flex-direction:column">
-        <img src="../tikz/motivation3.svg" class="width30 left0">
-        <p class="top4 left10">
-            $h_{\min} \leftarrow$优化<span class="red">最小间隔</span><br>$h_{\mathrm{dist}} \leftarrow$优化<span class="blue">间隔分布</span>
-        </p>
-    </div>
-</div>
+Boosting 算法
+
+- 最小间隔 ↛ 良好的泛化性能
+- 间隔分布更为重要
+
+<div class="bottom4"></div>
+
+大间隔方法
+
+- 以最小间隔为优化目标
+- 间隔分布 → 更好的泛化性能？
+
+<div class="bottom4"></div>
+
+如何优化间隔分布？
+
+- 一阶统计量：间隔<span class="blue">均值</span>
+- 二阶统计量：间隔<span class="blue">方差</span>
+- 最大化间隔<span class="blue">均值</span>、最小化间隔<span class="blue">方差</span>
+
+<img src="../tikz/motivation3.svg" class="width45 lefta right8 top-45per">
+
+<p class="top2 lefta right18" style="text-align:right">
+    $h_{\min}$ ← 优化<span class="red">最小间隔</span><br>
+    $h_{\mathrm{dist}}$ ← 优化<span class="blue">间隔分布</span>
+</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -710,7 +707,6 @@ HEADER 二分类最优间隔分布学习机
 
 形式化：最大化间隔<span class="red">均值</span> $\wedge$ 最小化间隔<span class="blue">方差</span> <span style="font-size:0.7em">(点击下式可显示形式化变化过程)</span>
 
-<p>
 $$
 \toggle
 {\begin{align*}
@@ -745,7 +741,6 @@ $$
 \end{align*}}
 \endtoggle
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -763,7 +758,6 @@ HEADER 二分类最优间隔分布学习机
 
 最终形式化：
 
-<p>
 $$
 \begin{align*}
     \min_{\wv, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wv\|^2 + \frac{\lambda}{2m} \sum_{i \in [m]} \frac{\xi_i^2 + \class{red}{\mu} \epsilon_i^2}{\class{cyan}{(1 - \theta)^2}} \\
@@ -771,7 +765,6 @@ $$
     & ~~ y_i \wv^\top \phi(\xv_i) \leq 1 \class{blue}{+ \theta} + \epsilon_i, ~ \forall i \in [m]
 \end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -785,7 +778,6 @@ HEADER 对偶问题
 
 对偶问题
 
-<p>
 $$
 \begin{align*}
     \min_{\alphav \geq \zerov} & ~~ \frac{1}{2} \alphav^\top \begin{bmatrix}
@@ -797,7 +789,6 @@ $$
     \end{bmatrix}^\top \alphav
 \end{align*}
 $$
-</p>
 
 <div class="top2"></div>
 
@@ -815,7 +806,6 @@ HEADER 优化算法
 
 对偶问题：二次规划
 
-<p>
 $$
 \begin{align*}
     \min_{\alphav \geq \zerov} \quad f(\alphav) = \frac{1}{2} \alphav^\top \underbrace{\begin{bmatrix}
@@ -827,7 +817,6 @@ $$
         \end{bmatrix}^\top \alphav
 \end{align*}
 $$
-</p>
 
 - 非负象限可行域
 - 正定对称二次型
@@ -849,25 +838,21 @@ HEADER 线性核原问题
 
 线性核原问题
 
-<p>
 $$
 \begin{align*}
     \min_{\wv} ~~ f(\wv) & = \frac{1}{2} \| \wv \|^2 + \frac{\lambda}{2m(1 - \theta)^2} \sum_{i \in [m]} [1 - \theta - y_i \wv^\top \xv_i]_+^2 \\
     & \qquad + \frac{\lambda \mu}{2m(1 - \theta)^2} \sum_{i \in [m]} [y_i \wv^\top \xv_i - 1 - \theta]_+^2
 \end{align*}
 $$
-</p>
 
 梯度
 
-<p>
 $$
 \begin{align*}
     \nabla f(\wv) & = \wv + \frac{\lambda}{\class{yellow}{m} (1-\theta)^2} \class{yellow}{\sum_{i \in [m]}} (y_i \wv^\top \xv_i + \theta - 1) y_i \xv_i 1_{y_i \wv^\top \xv_i \leq 1 - \theta} \\
     & \qquad + \frac{\lambda \mu}{\class{yellow}{m} (1-\theta)^2} \class{yellow}{\sum_{i \in [m]}} (y_i \wv^\top \xv_i - \theta - 1) y_i \xv_i 1_{y_i \wv^\top \xv_i \geq 1 + \theta}
 \end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -877,25 +862,21 @@ HEADER 线性核原问题 随机优化算法
 
 线性核原问题
 
-<p>
 $$
 \begin{align*}
     \min_{\wv} ~~ f(\wv) & = \frac{1}{2} \| \wv \|^2 + \frac{\lambda}{2m(1 - \theta)^2} \sum_{i \in [m]} [1 - \theta - y_i \wv^\top \xv_i]_+^2 \\
     & \qquad + \frac{\lambda \mu}{2m(1 - \theta)^2} \sum_{i \in [m]} [y_i \wv^\top \xv_i - 1 - \theta]_+^2
 \end{align*}
 $$
-</p>
 
 随机梯度
 
-<p>
 $$
 \begin{align*}
     \nabla f(\wv, \xv_i) & = \wv + \frac{\lambda}{(1-\theta)^2} (y_i \wv^\top \xv_i + \theta - 1) y_i \xv_i 1_{y_i \wv^\top \xv_i \leq 1 - \theta} \\
     & \qquad + \frac{\lambda \mu}{(1-\theta)^2} (y_i \wv^\top \xv_i - \theta - 1) y_i \xv_i 1_{y_i \wv^\top \xv_i \geq 1 + \theta}
 \end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -913,7 +894,6 @@ HEADER 多分类最优间隔分布学习机
 
 形式化：最大化间隔<span class="red">均值</span> $\wedge$ 最小化间隔<span class="blue">方差</span> <span style="font-size:0.7em">(点击下式可显示形式化变化过程)</span>
 
-<p>
 $$
 \toggle
 {\begin{align*}
@@ -928,7 +908,6 @@ $$
 \end{align*}}
 \endtoggle
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -938,7 +917,6 @@ HEADER 多分类最优间隔分布学习机
 
 形式化：最大化间隔<span class="red">均值</span> $\wedge$ 最小化间隔<span class="blue">方差</span>
 
-<p>
 $$
 \begin{align*}
     \min_{\wv, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{l \in [k]} \| \wv_l \|^2 + \frac{\lambda}{2m} \sum_{i \in [m]} \frac{\xi_i^2 + \mu \epsilon_i^2}{(1 - \theta)^2} \\
@@ -946,7 +924,6 @@ $$
     & ~~ \wv_{y_i}^\top \phi(\xv_i) - \max_{l \neq y_i} \wv_l^\top \phi(\xv_i) \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
 \end{align*}
 $$
-</p>
 
 约束中的$\max$导致该优化问题非凸非平滑
 
@@ -961,7 +938,6 @@ HEADER 多分类最优间隔分布学习机
 
 平滑凸二次优化
 
-<p>
 $$
 \begin{align*}
     \min_{\wv, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{l \in [k]} \| \wv_l \|^2 + \frac{\lambda}{2m} \sum_{i \in [m]} \frac{\xi_i^2 + \mu \epsilon_i^2}{(1 - \theta)^2} \\
@@ -969,7 +945,6 @@ $$
     & ~~ \wv_{y_i}^\top \phi(\xv_i) - M_i \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
 \end{align*}
 $$
-</p>
 
 <div class="top4"></div>
 
@@ -981,7 +956,6 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 对偶问题
 
-<p>
 $$
 \begin{align*}
     \min_{\alpha_i^l, \alpha_i^{y_i}, \beta_i} & ~~ \frac{1}{2} \sum_{l \in [k]} \sum_{i,j \in [m]} (\alpha_i^l - \delta_{y_i, l} \beta_i) (\alpha_j^l - \delta_{y_j, l} \beta_j) \kappa(\xv_i, \xv_j) \\
@@ -990,7 +964,6 @@ $$
     \st & ~~ \sum_{l \in [k]} \alpha_i^l = 0, ~ \alpha_i^l \leq 0, ~ \forall l \neq y_i, ~ \beta_i \geq 0, ~ \forall i \in [m]
 \end{align*}
 $$
-</p>
 
 <div class="top4"></div>
 
@@ -1005,7 +978,6 @@ HEADER 优化子问题
 
 以$\alpha_i^1, \ldots, \alpha_i^k, \beta_i$为优化变量
 
-<p>
 $$
 \begin{align*}
     \min_{\alpha_i^l, \alpha_i^{y_i}, \beta_i} & ~~ \sum_{l \neq y_i} \frac{A}{2} (\alpha_i^l)^2 + \sum_{l \neq y_i} B_l \alpha_i^l + \frac{D}{2} (\alpha_i^{y_i})^2 - A \alpha_i^{y_i} \beta_i \\
@@ -1013,7 +985,6 @@ $$
     \st & ~~ \sum_{l=1}^k \alpha_i^l = 0, ~ \alpha_i^l \leq 0, ~ \forall l \neq y_i,~\beta_i \geq 0
 \end{align*}
 $$
-</p>
 
 - 含有$k+1$个优化变量的凸二次优化
 - 通用的凸二次优化算法的时间开销是$O(k^3)$
@@ -1027,7 +998,6 @@ HEADER KKT 条件
 
 存在标量$\nu, \rho_l, \eta$满足
 
-<p>
 $$
 \begin{align*}
     \begin{cases}
@@ -1049,7 +1019,6 @@ $$
     \end{cases}
 \end{align*}
 $$
-</p>
 
 - $A \alpha_i^{y_i} \leq F \longrightarrow \beta_i = 0$，$\alpha_i^{y_i} = (\nu - B_{y_i})/D$，$\nu \leq B_{y_i} + DF/A$
 - $A \alpha_i^{y_i} > F \longrightarrow \beta_i = (A \alpha_i^{y_i} - F)/E$，$\alpha_i^{y_i} = (E \nu - AF - E B_{y_i})/(DE - A^2)$，$\nu > B_{y_i} + DF/A$
@@ -1062,25 +1031,21 @@ HEADER KKT 条件
 
 无论那种情形
 
-<p>
 $$
 \begin{align*}
     \nu^\star = \frac{ P + \sum_{l: \alpha_i^l <0} B_l }{ Q + |\{l | \alpha_i^l <0 \}| } 
 \end{align*}
 $$
-</p>
 
 <br>
 
 对$\{ B_l \mid l \neq y_i \}$降序排列，将其顺次添加到空集$\Phi$中直至下式成立
 
-<p>
 $$
 \begin{align*}
     \nu^\star= \frac{P + \sum_{l \in \Phi} \hat{B}_l}{Q + |\Phi|} & \geq \max_{l \not \in \Phi} \hat{B}_l
 \end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1088,17 +1053,19 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 理论分析
 
-<p class="top4 theorem">
-设假设空间为$\Hcal = \{ (\xv, y) \in \Xcal \times [k] \mapsto \wv_y^\top \phi(\xv) \mid \sum_{l=1}^k \|\wv_l\|^2 \leq \Lambda^2 \}$，其中$\phi: \Xcal \mapsto \Hbb$是某个正定核函数$\kappa(\cdot, \cdot)$诱导的特征映射，设数据集$\Scal \subseteq \{ \xv: \kappa(\xv, \xv) \leq r^2 \}$，则对于任意$\delta > 0$，以及任意$h \in \Hcal$，
+<div class="theorem top4 bottom4">
+
+设假设空间$\Hcal = \{ (\xv, y) \in \Xcal \times [k] \mapsto \wv_y^\top \phi(\xv) \mid \sum_{l=1}^k \|\wv_l\|^2 \leq \Lambda^2 \}$，其中$\phi: \Xcal \mapsto \Hbb$是某个正定核函数$\kappa(\cdot, \cdot)$诱导的特征映射，设数据集$\Scal \subseteq \{ \xv: \kappa(\xv, \xv) \leq r^2 \}$，则对于任意$\delta > 0$，以及任意$h \in \Hcal$，
+
 $$
 \begin{align*}
     R(h) \leq \underbrace{\frac{1}{m} \sum_{i=1}^m \Phi(\gamma (\xv_i, y_i))}_{经验风险相关} + \frac{16 r \Lambda}{1 - \theta} \sqrt{\frac{2 \pi k}{m}} + \underbrace{3 \sqrt{\frac{\ln (2 / \delta)}{2m}}}_{集中度不等式相关}
 \end{align*}
 $$
-至少以$1 - \delta$的概率成立
-</p>
 
-<br>
+至少以$1 - \delta$的概率成立
+
+</div>
 
 - $\gamma \leq \| \wv^\top \phi(\xv) \| \leq \| \wv \| \| \phi(\xv) \| \leq r \Lambda$，上界要尽可能的小
 - $1 - \theta$是无损失的间隔带的下界，第$p$小的间隔要尽可能的大
@@ -1140,7 +1107,6 @@ HEADER 问题形式化
 
 类别标记$\yv$也作为优化变量：
 
-<p>
 $$
 \begin{align*}
     \class{blue}{\min_{\yvhat \in \Bcal}} \min_{\wv, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wv\|^2 + \frac{1}{2m} \sum_{i=1}^m \lambda_i (\xi_i^2 + \nu \epsilon_i^2) \\
@@ -1148,7 +1114,6 @@ $$
     & ~~ \class{blue}{\yhat_i} \wv^\top \phi(\xv_i) \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
 \end{align*}
 $$
-</p>
 
 <br>
 
@@ -1166,7 +1131,6 @@ HEADER 问题形式化
 
 半监督：$\Scal = \Scal_l \cup \Scal_u = \{ (\xv_1, y_1), \ldots, (\xv_l,y_l) \} \cup \{ \xv_{l+1}, \ldots, \xv_{l+u} \}$
 
-<p>
 $$
 \begin{align*}
     \class{blue}{\min_{\yvhat \in \Bcal}} \min_{\wv, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wv\|^2 + \underbrace{\frac{\lambda_1}{l} \sum_{i=1}^l (\xi_i^2 + \nu \epsilon_i^2)}_{有标记数据} + \underbrace{\frac{\lambda_2}{u} \sum_{i=l+1}^{l+u} (\xi_i^2 + \nu \epsilon_i^2)}_{无标记数据} \\
@@ -1174,7 +1138,6 @@ $$
     & ~~ \class{blue}{\yhat_i} \wv^\top \phi(\xv_i) \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
 \end{align*}
 $$
-</p>
 
 <br>
 
@@ -1187,47 +1150,39 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 问题形式化 变形
 
-当前问题
-
-<p>
 $$
-    \begin{align*}
-        \class{blue}{\min_{\yvhat \in \Bcal}} \min_{\wv, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wv\|^2 + \frac{1}{2m} \sum_{i \in [m]} \lambda_i (\xi_i^2 + \nu \epsilon_i^2), \\
-        \st & ~~ \class{blue}{\yhat_i} \langle \wv, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i, ~ \class{blue}{\yhat_i} \langle \wv, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
-    \end{align*}
+\begin{align*}
+    \class{blue}{\min_{\yvhat \in \Bcal}} \min_{\wv, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wv\|^2 + \frac{1}{2m} \sum_{i \in [m]} \lambda_i (\xi_i^2 + \nu \epsilon_i^2), \\
+    \st & ~~ \class{blue}{\yhat_i} \langle \wv, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i, ~ \class{blue}{\yhat_i} \langle \wv, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
+\end{align*}
 $$
-</p>
 
 由于核映射$\phi$的存在，内层问题一般转化为对偶问题，引入拉格朗日乘子$\alphav = [\alpha_1; \ldots; \alpha_m]$、$\betav = [\beta_1; \ldots; \beta_m]$、$\deltav = \alphav - \betav$，根据 KKT 条件
 
-<p>
 $$
-    \begin{align*}
-        \wv = \sum_{i \in [m]} (\alpha_i - \beta_i) \yhat_i \phi(\xv_i), \quad \lambda_i \xi_i = m \alpha_i, \quad \lambda_i \nu \epsilon_i = m \beta_i
-    \end{align*}
+\begin{align*}
+    \wv = \sum_{i \in [m]} (\alpha_i - \beta_i) \yhat_i \phi(\xv_i), \quad \lambda_i \xi_i = m \alpha_i, \quad \lambda_i \nu \epsilon_i = m \beta_i
+\end{align*}
 $$
-</p>
 
 对偶问题为$\class{blue}{\min_{\yvhat \in \Bcal}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top (\Kv \odot \class{blue}{\yvhat} \class{blue}{\yvhat}^\top) \deltav - A(\alphav, \betav)$，其中
 
-<p class="bottom-2">
 $$
-    \begin{align*}
-        A(\alphav, \betav) = \frac{m}{2} \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix}^\top
-        \begin{bmatrix}
-            \Iv /  \lambdav         \\
-            & \Iv / \nu \lambdav
-        \end{bmatrix}
-        \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix} - \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix}^\top \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix}
-    \end{align*}
+\begin{align*}
+    A(\alphav, \betav) = \frac{m}{2} \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix}^\top
+    \begin{bmatrix}
+        \Iv /  \lambdav         \\
+        & \Iv / \nu \lambdav
+    \end{bmatrix}
+    \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix} - \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix}^\top \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix}
+\end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1235,43 +1190,29 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 问题形式化 变形
 
-<p class="top-1 bottom0">
-$$
-    \begin{align*}
-        \class{blue}{\min_{\yvhat \in \Bcal}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top (\Kv \odot \class{blue}{\yvhat} \class{blue}{\yvhat}^\top) \deltav - A(\alphav, \betav)
-    \end{align*}
-$$
-</p>
-
 外层问题是整数规划，交换$\min_{\yvhat \in \Bcal}$和$\max_{\alphav, \betav \succeq \zerov}$[<span class="blue">Li et al., AISTATS'09</span>]
 
-<p class="top-1 bottom0">
 $$
-    \begin{align*}
-        \max_{\alphav, \betav \succeq \zerov} \class{blue}{\min_{\yvhat \in \Bcal}} - \frac{1}{2} \deltav^\top (\Kv \odot \class{blue}{\yvhat} \class{blue}{\yvhat}^\top) \deltav - A(\alphav, \betav)
-    \end{align*}
+\begin{align*}
+    \max_{\alphav, \betav \succeq \zerov} \class{blue}{\min_{\yvhat \in \Bcal}} - \frac{1}{2} \deltav^\top (\Kv \odot \class{blue}{\yvhat} \class{blue}{\yvhat}^\top) \deltav - A(\alphav, \betav)
+\end{align*}
 $$
-</p>
 
 引入$|\Bcal|$维单纯形$\Delta^{|\Bcal|} = \{ \muv \mid \ev^\top \muv = 1, ~ \muv \succeq \zerov \}$可得连续优化：
 
-<p class="top-1 bottom0">
 $$
-    \begin{align*}
-        \max_{\alphav, \betav \succeq \zerov} \class{blue}{\min_{\muv \in \Delta^{|\Bcal|}}} - \frac{1}{2} \deltav^\top \left( \sum_{t:\yvhat_t \in \Bcal} \mu_t \Kv \odot \yvhat_t \yvhat_t^\top \right) \deltav - A(\alphav, \betav)
-    \end{align*}
+\begin{align*}
+    \max_{\alphav, \betav \succeq \zerov} \class{blue}{\min_{\muv \in \Delta^{|\Bcal|}}} - \frac{1}{2} \deltav^\top \left( \sum_{t:\yvhat_t \in \Bcal} \mu_t \Kv \odot \yvhat_t \yvhat_t^\top \right) \deltav - A(\alphav, \betav)
+\end{align*}
 $$
-</p>
 
 根据鞍点定理[<span class="blue">Kim & Boyd, CDC'07</span>]，再次(等价)交换
 
-<p class="top-1 bottom-2">
 $$
-    \begin{align*}
-        \text{D}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top \left( \sum_{t: \yvhat_t \in \Bcal} \mu_t \Kv \odot \yvhat_t \yvhat_t^\top \right) \deltav - A(\alphav, \betav)
-    \end{align*}
+\begin{align*}
+    \text{D}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top \left( \sum_{t: \yvhat_t \in \Bcal} \mu_t \Kv \odot \yvhat_t \yvhat_t^\top \right) \deltav - A(\alphav, \betav)
+\end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1279,29 +1220,23 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 问题形式化 变形
 
-对偶问题
-
-<p class="top-1 bottom0">
 $$
-    \begin{align*}
-        \text{D}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top \left( \sum_{t: \yvhat_t \in \Bcal} \mu_t \Kv \odot \yvhat_t \yvhat_t^\top \right) \deltav - A(\alphav, \betav)
-    \end{align*}
+\begin{align*}
+    \text{D}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top \left( \sum_{t: \yvhat_t \in \Bcal} \mu_t \Kv \odot \yvhat_t \yvhat_t^\top \right) \deltav - A(\alphav, \betav)
+\end{align*}
 $$
-</p>
 
 - 辅助样本$\xvt_i = [\sqrt{\mu_1} [\yvhat_1]_i \phi(\xv_i); \ldots; \sqrt{\mu_{|\Bcal|}} [\yvhat_{|\Bcal|}]_i \phi(\xv_i)]$
 - 辅助核矩阵$\Kvt$满足$[\Kvt]_{ij} = \langle \xvt_i, \xvt_j \rangle$
 
-<p class="top-1 bottom0">
 $$
-    \begin{align*}
-        \text{D}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} & - \frac{1}{2} \deltav^\top (\class{blue}{\Kvt \odot \ev \ev^\top}) \deltav - A(\alphav, \betav). \\
-        & ~~ \class{red}{\big \Downarrow ~ \Kv \rightarrow \Kvt, ~ \yvhat \rightarrow \ev} \\
-        \text{P}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wvt, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wvt\|^2 + \frac{1}{2m} \sum_{i \in [m]} \lambda_i (\xi_i^2 + \nu \epsilon_i^2), \\
-        \st & ~~ \langle \wvt, \xvt_i \rangle \geq 1 - \theta - \xi_i, ~ \langle \wvt, \xvt_i \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m].
-    \end{align*}
+\begin{align*}
+    \text{D}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} & - \frac{1}{2} \deltav^\top (\class{blue}{\Kvt \odot \ev \ev^\top}) \deltav - A(\alphav, \betav). \\
+    & ~~ \class{red}{\big \Downarrow ~ \Kv \rightarrow \Kvt, ~ \yvhat \rightarrow \ev} \\
+    \text{P}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wvt, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wvt\|^2 + \frac{1}{2m} \sum_{i \in [m]} \lambda_i (\xi_i^2 + \nu \epsilon_i^2), \\
+    \st & ~~ \langle \wvt, \xvt_i \rangle \geq 1 - \theta - \xi_i, ~ \langle \wvt, \xvt_i \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m].
+\end{align*}
 $$
-</p>
 
 KKT 条件为$\wvt = \sum_{i \in [m]} (\alpha_i - \beta_i) \xvt_i$、$\lambda_i \xi_i = m \alpha_i$、$\lambda_i \nu \epsilon_i = m \beta_i$
 
@@ -1313,26 +1248,22 @@ HEADER 问题形式化 变形
 
 原问题
 
-<p class="top0 bottom1">
 $$
-    \begin{align*}
-        \text{P}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wvt, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wvt\|^2 + \frac{\lambda}{2m} \sum_{i \in [m]} (\xi_i^2 + \nu \epsilon_i^2), \\
-        \st & ~~ \langle \wvt, \xvt_i \rangle \geq 1 - \theta - \xi_i, ~ \langle \wvt, \xvt_i \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
-    \end{align*}
+\begin{align*}
+    \text{P}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wvt, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \|\wvt\|^2 + \frac{\lambda}{2m} \sum_{i \in [m]} (\xi_i^2 + \nu \epsilon_i^2), \\
+    \st & ~~ \langle \wvt, \xvt_i \rangle \geq 1 - \theta - \xi_i, ~ \langle \wvt, \xvt_i \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
+\end{align*}
 $$
-</p>
 
 外层优化变量$\muv$隐藏在$\xvt_i$中，设$\wvt = [\wv_1 / \sqrt{\mu_1}; \ldots; \wv_{|\Bcal|} / \sqrt{\mu_{|\Bcal|}}]$
 
-<p class="top0 bottom1">
 $$
-    \begin{align*}
-        \text{P}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wv_t, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} + \frac{\lambda}{2m} \sum_{i \in [m]} (\xi_i^2 + \nu \epsilon_i^2), \\
-        \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\ 
-        & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
-    \end{align*}
+\begin{align*}
+    \text{P}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wv_t, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} + \frac{\lambda}{2m} \sum_{i \in [m]} (\xi_i^2 + \nu \epsilon_i^2), \\
+    \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\ 
+    & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
+\end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1342,22 +1273,19 @@ HEADER 问题形式化 变形
 
 原问题
 
-<p>
 $$
-    \begin{align*}
-        \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wv_t, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} + \frac{1}{2m} \sum_{i \in [m]} \lambda_i (\xi_i^2 + \nu \epsilon_i^2), \\
-        \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\ 
-        & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
-    \end{align*}
+\begin{align*}
+    \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wv_t, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} + \frac{1}{2m} \sum_{i \in [m]} \lambda_i (\xi_i^2 + \nu \epsilon_i^2), \\
+    \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\ 
+    & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
+\end{align*}
 $$
-</p>
 
 对偶问题
 
-<p>
 $$
-    \begin{align*}
-        \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} & - \frac{1}{2} \begin{bmatrix}
+\begin{align*}
+    \min_{\muv \in \Delta^{|\Bcal|}} \max_{\alphav, \betav \succeq \zerov} & - \frac{1}{2} \begin{bmatrix}
         \alphav \\ \betav
     \end{bmatrix}^\top \begin{bmatrix}
         \Iv \\ -\Iv
@@ -1378,9 +1306,8 @@ $$
     \end{bmatrix} - \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix}^\top \begin{bmatrix}
         \alphav \\ \betav
     \end{bmatrix}
-    \end{align*}
+\end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1390,53 +1317,47 @@ HEADER 交替优化
 
 当$\muv$固定时，$\Kvt$亦固定，优化$\alphav, \betav$为<span class="blue">非负象限上的凸二次规划</span>
 
-<p>
 $$
-    \begin{align*}
-        \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix}^\top \begin{bmatrix}
-            \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav 
-        \end{bmatrix} \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix} - \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix}^\top \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix}
-    \end{align*}
+\begin{align*}
+    \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix}^\top \begin{bmatrix}
+        \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav 
+    \end{bmatrix} \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix} - \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix}^\top \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix}
+\end{align*}
 $$
-</p>
 
 采用投影梯度法或坐标下降法
 
-<p class="top0 bottom1">
 $$
-    \begin{align*}
-        \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix} \leftarrow \left[ \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix} - \eta \left( \begin{bmatrix}
-            \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav 
-        \end{bmatrix} \begin{bmatrix}
-            \alphav \\ \betav
-        \end{bmatrix} + \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix} \right) \right]_+
-    \end{align*}
+\begin{align*}
+    \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix} \leftarrow \left[ \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix} - \eta \left( \begin{bmatrix}
+        \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav 
+    \end{bmatrix} \begin{bmatrix}
+        \alphav \\ \betav
+    \end{bmatrix} + \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix} \right) \right]_+
+\end{align*}
 $$
-</p>
 
 求得$\alphav, \betav$后，由$\lambda_i \xi_i = m \alpha_i, \lambda_i \nu \epsilon_i = m \beta_i$可得$\epsilon_i, \xi_i$，以及
 
-<p>
 $$
-    \begin{align*}
-        \begin{bmatrix}
-            \wv_1 / \sqrt{\mu_1} \\ \vdots \\ \wv_{|\Bcal|} / \sqrt{\mu_{|\Bcal|}}
-        \end{bmatrix} = \sum_{i \in [m]} (\alpha_i - \beta_i) \xvt_i = \sum_{i \in [m]} (\alpha_i - \beta_i) \begin{bmatrix}
-            \sqrt{\mu_1} [\yvhat_1]_i \phi(\xv_i) \\ \vdots \\ \sqrt{\mu_{|\Bcal|}} [\yvhat_{|\Bcal|}]_i \phi(\xv_i)
-        \end{bmatrix}
-    \end{align*}
+\begin{align*}
+    \begin{bmatrix}
+        \wv_1 / \sqrt{\mu_1} \\ \vdots \\ \wv_{|\Bcal|} / \sqrt{\mu_{|\Bcal|}}
+    \end{bmatrix} = \sum_{i \in [m]} (\alpha_i - \beta_i) \xvt_i = \sum_{i \in [m]} (\alpha_i - \beta_i) \begin{bmatrix}
+        \sqrt{\mu_1} [\yvhat_1]_i \phi(\xv_i) \\ \vdots \\ \sqrt{\mu_{|\Bcal|}} [\yvhat_{|\Bcal|}]_i \phi(\xv_i)
+    \end{bmatrix}
+\end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1446,33 +1367,27 @@ HEADER 交替优化
 
 当$\alphav, \betav$固定时，$\wv_t, \epsilon_i, \xi_i$亦固定，$\muv$优化子问题为
 
-<p>
 $$
-    \begin{align*}
-        \min_{\muv \in \Delta^{|\Bcal|}} ~ \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t}
-    \end{align*}
+\begin{align*}
+    \min_{\muv \in \Delta^{|\Bcal|}} ~ \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t}
+\end{align*}
 $$
-</p>
 
 由柯西-施瓦茨不等式知
 
-<p>
 $$
-    \begin{align*}
-        \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} = \left( \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} \right) \left( \sum_{t: \yvhat_t \in \Bcal} \mu_t \right) \ge \left( \sum_{t: \yvhat_t \in \Bcal} \|\wv_t\| \right)^2
-    \end{align*}
+\begin{align*}
+    \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} = \left( \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} \right) \left( \sum_{t: \yvhat_t \in \Bcal} \mu_t \right) \ge \left( \sum_{t: \yvhat_t \in \Bcal} \|\wv_t\| \right)^2
+\end{align*}
 $$
-</p>
 
 取等号的条件是$\|\wv_t\| / \mu_t$为常数，不妨设为$k$，于是有闭式解
 
-<p>
 $$
-    \begin{align*}
-        \mu_t = \frac{\|\wv_t\|}{k} = \frac{\|\wv_t\|}{k \sum_{i: \yvhat_i \in \Bcal} \mu_i} = \frac{\|\wv_t\|}{\sum_{i: \yvhat_i \in \Bcal} \|\wv_i\|}
-    \end{align*}
+\begin{align*}
+    \mu_t = \frac{\|\wv_t\|}{k} = \frac{\|\wv_t\|}{k \sum_{i: \yvhat_i \in \Bcal} \mu_i} = \frac{\|\wv_t\|}{\sum_{i: \yvhat_i \in \Bcal} \|\wv_i\|}
+\end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1484,7 +1399,7 @@ HEADER 算法实现
 
 - 引入$|\Bcal|$维单纯形$\muv \in \Delta^{|\Bcal|}$将问题连续化
 - $\muv$的维度$|\Bcal|$与样本数呈指数关系
-- 混合整数规划$\longrightarrow$高维连续优化
+- 混合整数规划 → 高维连续优化
 
 <div class="top2"></div>
 
@@ -1506,36 +1421,30 @@ HEADER 算法实现
 
 最初的问题为
 
-<p>
 $$
-    \begin{align*}
-        \class{blue}{\min_{\yvhat \in \Bcal}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top (\Kv \odot \class{blue}{\yvhat} \class{blue}{\yvhat}^\top) \deltav - A (\alphav, \betav)
-    \end{align*}
+\begin{align*}
+    \class{blue}{\min_{\yvhat \in \Bcal}} \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \deltav^\top (\Kv \odot \class{blue}{\yvhat} \class{blue}{\yvhat}^\top) \deltav - A (\alphav, \betav)
+\end{align*}
 $$
-</p>
 
 其关于$\yvhat$的优化问题为
 
-<p>
 $$
-    \begin{align*}
-        \max_{\yvhat \in \Bcal} ~ \deltav^\top \diag(\yvhat) \Kv \diag(\yvhat) \deltav = \max_{\yvhat \in \Bcal} ~ \yvhat^\top \underbrace{\diag(\deltav) \Kv \diag(\deltav)}_{= ~ \Hv} \yvhat = \max_{\yvhat \in \Bcal} ~ \yvhat^\top \Hv \yvhat
-    \end{align*}
+\begin{align*}
+    \max_{\yvhat \in \Bcal} ~ \deltav^\top \diag(\yvhat) \Kv \diag(\yvhat) \deltav = \max_{\yvhat \in \Bcal} ~ \yvhat^\top \underbrace{\diag(\deltav) \Kv \diag(\deltav)}_{= ~ \Hv} \yvhat = \max_{\yvhat \in \Bcal} ~ \yvhat^\top \Hv \yvhat
+\end{align*}
 $$
-</p>
 
 设第$T$轮外层循环，$\muv$的非零维下标集合为$\Ical_T$
 
 - 定义候选簇标记赋值集合$\Acal_T = \{ \yvhat_t \in \Bcal \mid t \in \Ical_T \}$
 - 由于$\Ical_1 \subseteq \Ical_2 \subseteq \cdots \subseteq [|\Bcal|]$，因此$\Acal_1 \subseteq \Acal_2 \subseteq \cdots \subseteq \Bcal$，故
 
-<p class="top1 bottom0">
 $$
-    \begin{align*}
-        \max_{\yvhat \in \Acal_1} ~ \yvhat^\top \Hv \yvhat ~ < ~ \max_{\yvhat \in \Acal_2} ~ \yvhat^\top \Hv \yvhat ~ < ~ \cdots ~ < ~ \max_{\yvhat \in \Bcal} ~ \yvhat^\top \Hv \yvhat
-    \end{align*}
+\begin{align*}
+    \max_{\yvhat \in \Acal_1} ~ \yvhat^\top \Hv \yvhat ~ < ~ \max_{\yvhat \in \Acal_2} ~ \yvhat^\top \Hv \yvhat ~ < ~ \cdots ~ < ~ \max_{\yvhat \in \Bcal} ~ \yvhat^\top \Hv \yvhat
+\end{align*}
 $$
-</p>
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
 
@@ -1543,13 +1452,11 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 算法实现
 
-<p>
 $$
     \begin{align*}
         \max_{\yvhat \in \Acal_1} ~ \yvhat^\top \Hv \yvhat ~ < ~ \max_{\yvhat \in \Acal_2} ~ \yvhat^\top \Hv \yvhat ~ < ~ \cdots ~ < ~ \max_{\yvhat \in \Bcal} ~ \yvhat^\top \Hv \yvhat
     \end{align*}
 $$
-</p>
 
 - 扩充$\muv$的非零维的过程相当于构造问题序列逐渐逼近原问题的过程
 - 扩充$\Acal_T$时应选择尽可能使得目标函数值增大的$\yvhat$
@@ -1563,13 +1470,11 @@ $$
 
 只要$\class{blue}{\yvt^\top \Hv \yvbar \neq \yvbar^\top \Hv \yvbar}$，就有$\yvt^\top \Hv \yvt > \yvbar^\top \Hv \yvbar$。设$\yvt^\top \Hv \yvt \le \yvbar^\top \Hv \yvbar$，则有
 
-<p>
 $$
-    \begin{align*}
-        0 \le (\yvt - \yvbar)^\top \Hv (\yvt - \yvbar) \le 2 (\yvbar^\top \Hv \yvbar - \yvt^\top \Hv \yvbar) < 0
-    \end{align*}
+\begin{align*}
+    0 \le (\yvt - \yvbar)^\top \Hv (\yvt - \yvbar) \le 2 (\yvbar^\top \Hv \yvbar - \yvt^\top \Hv \yvbar) < 0
+\end{align*}
 $$
-</p>
 
 - 由于$\Acal_T$中只有有限个元素，因此遍历取令目标函数最大的$\yvhat$即可
 - 最终只剩求解$\yvt$，这是一个整数线性规划
@@ -1582,13 +1487,11 @@ HEADER 算法实现
 
 整数线性规划
 
-<p>
 $$
-    \begin{align*}
-        \yvt = \argmax_{\yvhat \in \Bcal} \yvhat^\top \Hv \yvbar
-    \end{align*}
+\begin{align*}
+    \yvt = \argmax_{\yvhat \in \Bcal} \yvhat^\top \Hv \yvbar
+\end{align*}
 $$
-</p>
 
 由于$\yvhat \in \{ 1, -1\}^m$，故若不考虑$\yvhat \in \Bcal$，有闭式解$\yvt = \sgn(\Hv \yvbar)$
 
@@ -1634,53 +1537,6 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 总结
 
-<div class="center top4" markdown="1">
-
-```dot
-digraph g {
-graph [nodesep=0.3 ranksep=0.5]
-style=filled
-bgcolor="#fdf6e3"
-
-node [shape=ellipse color="#586e75" fontcolor="#586e75" fontsize=16 fontname="EBG,fzlz"]
-edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,fzlz" arrowsize=0.6]
-
-间隔：样本点到分界面的有向距离 -> 最小间隔 [headlabel="VC维理论" labeldistance=3.5 labelangle=55]
-间隔：样本点到分界面的有向距离 -> "间隔均值 间隔方差" [label="间隔理论"]
-
-最小间隔 -> 支持向量机 [label="  启发"]
-
-node [fontcolor="#b58900"]
-
-"间隔均值 间隔方差" -> 最优间隔分布学习机 [label="  启发"]
-
-edge [fontcolor="#dc322f"]
-
-"间隔均值 间隔方差" -> 最小间隔 [label="更本质" constraint=false]
-
-最优间隔分布学习机 -> 支持向量机 [label="更优异" constraint=false]
-
-node [shape=box]
-
-最优间隔分布学习机 -> {"二/多分类" "聚类/半监督"}
-
-subgraph cluster_1 {
-    label="一点微小的工作"
-    fontname="EBG,fzlz"
-    color="#586e75"
-    fontcolor="#268bd2"
-    style="dashed"
-    labelloc="b"
-    "二/多分类" "聚类/半监督"
-}
-
-node [fontcolor="#586e75"]
-
-最优间隔分布学习机 -> {多示例 多标记 孪生版本 回归}
-
-}
-```
-
-</div>
+@import "../dot/odm-review.dot" {.center .top5}
 
 FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@hust.edu.cn
