@@ -169,18 +169,6 @@
   padding: 0.5rem 1rem 0.1rem 1rem;
 }
 
-// 三线表
-.reveal table {
-  th {
-    font-weight: bold; // 表头文字加粗
-    border-top: 2px solid var(--solarized-base01); // 表头上边框
-    border-bottom: 1px solid var(--solarized-base01); // 表头下边框
-  }
-  tbody tr:nth-last-child(1) {
-    border-bottom: 2px solid var(--solarized-base01); // 最后一行下边框
-  }
-}
-
 // 从最后一行开始的bb行有上边框 默认bb=0 即就是三线表
 @mixin tableconfig($tablename, $bb: 0) {
   .reveal .#{$tablename} tbody tr:nth-last-child(-n + #{$bb}) td {
@@ -198,19 +186,7 @@
   }
 }
 
-// dataset表1、2列左对齐 3、4列右对齐
-@for $i from 1 to 3 {
-  @include tablecolumnalign(dataset, $i);
-  @include tablecolumnalign(dataset, $i + 2, right);
-}
-
 @include tablecolumnalign(rand, 1);
-
-.reveal .dataset > table {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .reveal .rand > table {
   width: 90% !important;
