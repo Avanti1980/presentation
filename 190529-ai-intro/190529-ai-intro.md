@@ -1,8 +1,8 @@
 ---
 presentation:
-    transition: "none"
-    enableSpeakerNotes: true
-    margin: 0
+  transition: "none"
+  enableSpeakerNotes: true
+  margin: 0
 ---
 
 @import "../common/css/font-awesome-4.7.0/css/font-awesome.css"
