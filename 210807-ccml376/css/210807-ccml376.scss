@@ -21,27 +21,11 @@
   width: 20%;
 }
 
-// 从最后一行开始的bb行有上边框 默认bb=0 即就是三线表
-@mixin tableconfig($tablename, $bb: 0) {
-  .reveal .#{$tablename} tbody tr:nth-last-child(-n + #{$bb}) td {
-    border-top: 1px solid var(--solarized-base01);
-  }
-}
-
-@include tableconfig(rand, 1); // rand表最优一行是win/tie/lose 需上边框
-
-// 设置第col列的对齐方式 默认左对齐
-@mixin tablecolumnalign($tablename, $col, $align: left) {
-  .reveal .#{$tablename} tr th:nth-child(#{$col}),
-  .reveal .#{$tablename} tr td:nth-child(#{$col}) {
-    text-align: $align;
-  }
-}
-
-@include tablecolumnalign(rand, 1);
-
 .reveal .rand > table {
   width: 90% !important;
-  margin-left: auto;
-  margin-right: auto;
+  th,
+  td {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem 0.1rem 1rem;
+  }
 }
