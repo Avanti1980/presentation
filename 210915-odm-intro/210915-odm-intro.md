@@ -6,7 +6,8 @@ presentation:
 ---
 
 @import "../common/css/font-awesome-4.7.0/css/font-awesome.css"
-@import "../common/css/zhangt-solarized.css"
+@import "../common/css/style-color.css"
+@import "../common/css/margin.css"
 @import "css/210915-odm-intro.css"
 
 <!-- slide data-notes="感谢刘老师 很荣幸能和高瓴的同行们分享自己的工作 我知道高瓴群英荟萃 藏龙卧虎 所以我也有点紧张 讲得不好 大家多海涵" -->
@@ -1033,7 +1034,7 @@ HEADER KKT 条件
 
 $$
 \begin{align*}
-    \nu^\star = \frac{ P + \sum_{l: \alpha_i^l <0} B_l }{ Q + |\{l | \alpha_i^l <0 \}| } 
+    \nu^\star = \frac{ P + \sum_{l: \alpha_i^l <0} B_l }{ Q + |\{l | \alpha_i^l <0 \}| }
 \end{align*}
 $$
 
@@ -1053,9 +1054,9 @@ FOOTER3 华中科技大学计算机学院 最优间隔分布学习机 tengzhang@
 
 HEADER 理论分析
 
-<div class="theorem top4 bottom4">
+<div class="theorem top3 bottom3">
 
-设假设空间$\Hcal = \{ (\xv, y) \in \Xcal \times [k] \mapsto \wv_y^\top \phi(\xv) \mid \sum_{l=1}^k \|\wv_l\|^2 \leq \Lambda^2 \}$，其中$\phi: \Xcal \mapsto \Hbb$是某个正定核函数$\kappa(\cdot, \cdot)$诱导的特征映射，设数据集$\Scal \subseteq \{ \xv: \kappa(\xv, \xv) \leq r^2 \}$，则对于任意$\delta > 0$，以及任意$h \in \Hcal$，
+设$\Hcal = \{ (\xv, y) \in \Xcal \times [k] \mapsto \wv_y^\top \phi(\xv) \mid \sum_{l=1}^k \|\wv_l\|^2 \leq \Lambda^2 \}$为假设空间，$\phi: \Xcal \mapsto \Hbb$是某个正定核函数$\kappa(\cdot, \cdot)$诱导的特征映射，数据集$\Scal \subseteq \{ \xv: \kappa(\xv, \xv) \leq r^2 \}$，则对于任意$\delta > 0$，以及任意$h \in \Hcal$，
 
 $$
 \begin{align*}
@@ -1260,7 +1261,7 @@ $$
 $$
 \begin{align*}
     \text{P}: ~ \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wv_t, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} + \frac{\lambda}{2m} \sum_{i \in [m]} (\xi_i^2 + \nu \epsilon_i^2), \\
-    \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\ 
+    \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\
     & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
 \end{align*}
 $$
@@ -1276,7 +1277,7 @@ HEADER 问题形式化 变形
 $$
 \begin{align*}
     \min_{\muv \in \Delta^{|\Bcal|}} \min_{\wv_t, \xi_i, \epsilon_i} & ~~ \frac{1}{2} \sum_{t: \yvhat_t \in \Bcal} \frac{\|\wv_t\|^2}{\mu_t} + \frac{1}{2m} \sum_{i \in [m]} \lambda_i (\xi_i^2 + \nu \epsilon_i^2), \\
-    \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\ 
+    \st & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \geq 1 - \theta - \xi_i \\
     & ~~ \sum_{t: \yvhat_t \in \Bcal} [\yvhat_t]_i \langle \wv_t, \phi(\xv_i) \rangle \leq 1 + \theta + \epsilon_i, ~ \forall i \in [m]
 \end{align*}
 $$
@@ -1322,7 +1323,7 @@ $$
     \max_{\alphav, \betav \succeq \zerov} - \frac{1}{2} \begin{bmatrix}
         \alphav \\ \betav
     \end{bmatrix}^\top \begin{bmatrix}
-        \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav 
+        \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav
     \end{bmatrix} \begin{bmatrix}
         \alphav \\ \betav
     \end{bmatrix} - \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix}^\top \begin{bmatrix}
@@ -1340,7 +1341,7 @@ $$
     \end{bmatrix} \leftarrow \left[ \begin{bmatrix}
         \alphav \\ \betav
     \end{bmatrix} - \eta \left( \begin{bmatrix}
-        \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav 
+        \Kvt + m \Iv / \lambdav & -\Kvt \\ -\Kvt & \Kvt + m \Iv / \nu \lambdav
     \end{bmatrix} \begin{bmatrix}
         \alphav \\ \betav
     \end{bmatrix} + \begin{bmatrix} (\theta - 1) \ev \\ (\theta + 1) \ev \end{bmatrix} \right) \right]_+
