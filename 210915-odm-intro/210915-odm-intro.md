@@ -8,7 +8,6 @@ presentation:
 @import "../common/css/font-awesome-4.7.0/css/font-awesome.css"
 @import "../common/css/style-color.css"
 @import "../common/css/margin.css"
-@import "css/210915-odm-intro.css"
 
 <!-- slide data-notes="感谢刘老师 很荣幸能和高瓴的同行们分享自己的工作 我知道高瓴群英荟萃 藏龙卧虎 所以我也有点紧张 讲得不好 大家多海涵" -->
 <div class="header"><img class="hust"><img class="bdts"></div>
@@ -63,16 +62,30 @@ HEADER 引子
 
 ### 西瓜数据集
 
-<div class="dataset">
+<div class="head-highlight-2
+column2-border2-top-solid-head column2-border1-bottom-solid-head
+column3-border2-top-solid-head column3-border1-bottom-solid-head
+column4-border2-top-solid-head column4-border1-bottom-solid-head
+column5-border2-top-solid-head column5-border1-bottom-solid-head column8-border1-right-solid-head
+column6-border2-top-solid-head column6-border1-bottom-solid-head
+column7-border2-top-solid-head column7-border1-bottom-solid-head
+column8-border2-top-solid-head column8-border1-bottom-solid-head
+column9-border2-top-solid-head column9-border1-bottom-solid-head
+row4-column2-border2-bottom-solid row4-column3-border2-bottom-solid row4-column4-border2-bottom-solid
+row4-column5-border2-bottom-solid row4-column6-border2-bottom-solid row4-column7-border2-bottom-solid
+row4-column8-border2-bottom-solid row4-column9-border2-bottom-solid
+row1-column8-border1-right-solid row2-column8-border1-right-solid
+row3-column8-border1-right-solid row4-column8-border1-right-solid
+">
 
-| 特征 &nbsp;&nbsp;&nbsp; → | 编号 | 色泽 | 根蒂 | 敲声 | 好瓜 |
-| ------------------------: | :--: | :--: | :--: | :--: | :--: |
-| 样本 &nbsp;&nbsp;&nbsp; → |  1   | 青绿 | 蜷缩 | 浊响 |  是  |
-|                           |  2   | 乌黑 | 蜷缩 | 浊响 |  是  |
-|                           |  3   | 青绿 | 硬挺 | 清脆 |  否  |
-|                           |  4   | 乌黑 | 蜷缩 | 沉闷 |  否  |
-|                           |      |      |      |      |  ↑   |
-|                           |      |      |      |      | 类别 |
+| <span style="font-weight:normal"><span class="blue">特征</span> &nbsp; →</span> | 编号 | 色泽 | 根蒂 | 敲声 | 纹理 | 脐部 | 触感 |              好瓜              |
+| ------------------------------------------------------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :----------------------------: |
+|                                         <span class="blue">样本</span> &nbsp; → |  1   | 青绿 | 蜷缩 | 浊响 | 清晰 | 凹陷 | 硬滑 |               是               |
+|                                                                                 |  2   | 乌黑 | 蜷缩 | 沉闷 | 清晰 | 凹陷 | 硬滑 |               是               |
+|                                                                                 |  3   | 乌黑 | 稍蜷 | 沉闷 | 稍糊 | 稍凹 | 硬滑 |               否               |
+|                                                                                 |  4   | 浅白 | 硬挺 | 清脆 | 模糊 | 平坦 | 硬滑 |               否               |
+|                                                                                 |      |      |      |      |      |      |      |               ↑                |
+|                                                                                 |      |      |      |      |      |      |      | <span class="blue">类别</span> |
 
 </div>
 

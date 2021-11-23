@@ -1,0 +1,39 @@
+digraph g {
+    align=right
+    graph [nodesep=0.8 ranksep=0.8]
+    bgcolor="transparent"
+
+    node [shape=ellipse color="#586e75" fontcolor="#859900" fontsize=16 fontname="fzlz"]
+    edge [dir=none color="#839496" fontcolor="#839496" fontsize=12 fontname="fzlz"]
+
+    口罩
+
+    node [shape=box color="#586e75" fontcolor="#268bd2"]
+
+    同济
+
+    node [shape=ellipse color="#586e75" fontcolor="#859900"]
+
+    护目镜, 呼吸机
+
+    口罩 -> 同济
+    同济 -> 护目镜
+    呼吸机 -> 同济
+
+    node [shape=box color="#586e75" fontcolor="#268bd2"]
+
+    协和
+
+    口罩 -> 协和
+
+    node [shape=ellipse color="#586e75" fontcolor="#859900"]
+
+    检测试剂, 防护服
+
+    检测试剂 -> 协和
+    协和 -> 防护服
+
+    node [shape=box color="#586e75" fontcolor="#268bd2"]
+
+    口罩 -> 金银潭
+}

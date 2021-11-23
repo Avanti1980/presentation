@@ -1,0 +1,17 @@
+digraph g {
+  graph [nodesep=0.8 ranksep=0.5]
+  bgcolor="transparent"
+
+  node [shape=ellipse color="#586e75" fontcolor="#b58900" fontsize=16 fontname="EBG,fzlz"]
+  edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,fzlz" arrowsize=0.6]
+
+  ODM效率不高
+
+  node [fontcolor="#d33682"]
+  ODM效率不高 -> 资源受限的应用场景 [label=" 制约" fontcolor="#dc322f"]
+
+  资源受限的应用场景 -> {计算资源,存储资源,时间资源}
+
+  node [shape=box]
+  时间资源 -> {实时交易,人机交互}
+}

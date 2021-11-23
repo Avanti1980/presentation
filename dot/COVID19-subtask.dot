@@ -1,0 +1,45 @@
+digraph g {
+    graph [nodesep=0.5 ranksep=0.5]
+    bgcolor="transparent"
+    rankdir=LR
+
+    node [shape=box color="#586e75" fontname="EBG,fzlz" fontcolor="#b58900" fontsize=16]
+    edge [arrowhead=vee color="#586e75" fontname="EBG,fzlz" fontcolor="#268bd2" fontsize=16 arrowsize=0.5]
+
+    subgraph cluster_3 {
+        label="数据呈现"
+        fontname="EBG,fzlz"
+        color="#839496"
+        fontcolor="#268bd2"
+        style="dashed"
+        labelloc="t"
+        labeljust=left;
+        "5. 疫情数据时空可视化"
+    }
+
+    subgraph cluster_2 {
+        label="数据分析"
+        fontname="EBG,fzlz"
+        color="#839496"
+        fontcolor="#268bd2"
+        style="dashed"
+        labelloc="t"
+        labeljust=left;
+        "3. 人-物-事件融合的疫情网络构建" -> " 4. 疫情网络分析与挖掘 " [constraint=false]
+    }
+
+    subgraph cluster_1 {
+        label="数据准备"
+        fontname="EBG,fzlz"
+        color="#839496"
+        fontcolor="#268bd2"
+        style="dashed"
+        labelloc="t"
+        labeljust=left;
+        "1. 数据清洗与脱敏" -> "2. 数据关联与组织" [constraint=false]
+    }
+
+    "2. 数据关联与组织" -> "3. 人-物-事件融合的疫情网络构建"
+
+    " 4. 疫情网络分析与挖掘 " -> "5. 疫情数据时空可视化"
+}

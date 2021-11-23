@@ -1,0 +1,38 @@
+digraph g {
+  graph [nodesep=0.2 ranksep=0.5]
+  bgcolor="transparent"
+
+  node [shape=ellipse color="#586e75" fontcolor="#b58900" fontsize=16 fontname="EBG,fzlz"]
+  edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,fzlz" arrowsize=0.6]
+
+  间隔：样本点到分界面的距离 -> 最小间隔 [headlabel="VC维理论" labeldistance=3.5 labelangle=55]
+  间隔：样本点到分界面的距离 -> "间隔均值 间隔方差" [label="间隔理论"]
+
+  最小间隔 -> 支持向量机 [label="  启发"]
+
+  node [fontcolor="#d33682"]
+
+  "间隔均值 间隔方差" -> 最优间隔分布学习机 [label="  启发"]
+
+  edge [fontcolor="#dc322f"]
+
+  "间隔均值 间隔方差" -> 最小间隔 [label="更本质" constraint=false]
+
+  最优间隔分布学习机 -> 支持向量机 [label="更优异" constraint=false]
+
+  node [shape=box]
+
+  最优间隔分布学习机 -> {二分类 多分类 聚类 半监督 多示例}
+
+  subgraph cluster_R {
+    label="一点微小的工作"
+    color="#586e75"
+    fontname="EBG,fzlz"
+    fontcolor="#268bd2"
+    style="dashed"
+    labelloc="b"
+    二分类 多分类 聚类 半监督 多示例
+  }
+
+  最优间隔分布学习机 -> {多标记 回归 特征选择}
+}
