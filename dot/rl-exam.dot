@@ -1,0 +1,24 @@
+digraph g {
+    graph [ranksep=1 nodesep=1]
+    node [shape=circle color="#586e75" fontcolor="#586e75" fontsize=20 fontname="EBG, fzlz"]
+    edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" arrowsize=0.8]
+    rankdir=LR
+    bgcolor="transparent"
+
+    0 -> 4 -> 0
+
+    {1, 4} -> 5
+    5 -> {1, 4}
+    5:e -> 5:e
+
+    2 -> 3 -> 1 -> 3 -> 2
+
+    3 -> 4 -> 3
+
+    5 [fillcolor="#dc322f3f", style=filled]
+    2 [fillcolor="#268bd23f", style=filled]
+
+    {rank = same; 0; 2;}
+    {rank = same; 3; 4;}
+    {rank = same; 1; 5;}
+}

@@ -1,0 +1,19 @@
+digraph g {
+    rankdir=LR
+    node [shape="box" color="#586e75" fontcolor="#b58900" fontsize=15 fontname="EBG, fzlz"]
+    edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" arrowsize=0.8]
+    bgcolor="transparent"
+
+    人工智能 -> {逻辑推理,知识工程,机器学习}
+
+    node [fontcolor="#eee8d5" color="#eee8d5"]
+    edge [color="#eee8d5"]
+
+    机器学习 -> {监督学习,无监督学习,半监督学习,主动学习,强化学习}
+
+    强化学习 -> {值函数估计,策略搜索,其它话题}
+
+    值函数估计 -> {策略迭代,值迭代,蒙特卡洛,时序差分}
+
+    策略搜索 -> {策略梯度,"演员-评论家"}
+}
