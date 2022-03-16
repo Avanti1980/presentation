@@ -1,0 +1,23 @@
+digraph g {
+    graph [nodesep=0.3, ranksep=0.4]
+    rankdir=LR
+    node [shape=plaintext fontname="EBG,LXGW" fontcolor="#b58900" fontsize=16]
+    edge [arrowhead=vee fontname="EBG,LXGW" color="#586e75" fontcolor="#268bd2" fontsize=12 arrowsize=0.5]
+    bgcolor="transparent"
+
+    人工智能 -> {逻辑推理, 知识工程}
+
+    node [fontcolor="#dc322f"]
+
+    人工智能 -> 机器学习
+
+    node [fontcolor="#b58900"]
+
+    机器学习 -> {线性模型, 组合模型, 贝叶斯模型}
+
+    线性模型 -> {感知机, 支持向量机, 对数几率回归}
+
+    组合模型 -> {随机森林, 梯度提升树}
+
+    贝叶斯模型 -> {隐马尔克夫模型, 隐狄利克雷分布}
+}
