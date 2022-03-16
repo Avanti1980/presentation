@@ -3,12 +3,12 @@ digraph g {
     graph [nodesep=0.8 ranksep=0.8]
     bgcolor="transparent"
 
-    node [shape=box style=rounded color="#586e75" fontcolor="#b58900" fontsize=32 fontname="EBG,fzlz"]
-    edge [color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,fzlz" arrowsize=0.6]
+    node [shape=box style=rounded color="#586e75" fontcolor="#b58900" fontsize=32 fontname="EBG,LXGW"]
+    edge [color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,LXGW" arrowsize=0.6]
 
     subgraph cluster_0 {
         style=rounded
-        fontname="EBG,fzlz"
+        fontname="EBG,LXGW"
         label=人工智能
         fontsize=32
         color="#586e75"
@@ -17,7 +17,7 @@ digraph g {
 
         subgraph cluster_1 {
             style=rounded
-            fontname="EBG,fzlz"
+            fontname="EBG,LXGW"
             label=机器学习
             color="#586e75"
             fontcolor="#b58900"

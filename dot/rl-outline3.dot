@@ -1,6 +1,6 @@
 digraph g {
     rankdir=LR
-    node [shape="box" fontcolor="#eee8d5" color="#eee8d5" fontsize=15 fontname="EBG, fzlz"]
+    node [shape="box" fontcolor="#eee8d5" color="#eee8d5" fontsize=15 fontname="EBG, LXGW"]
     edge [arrowhead=vee color="#eee8d5" fontcolor="#268bd2" arrowsize=0.8]
     bgcolor="transparent"
 

@@ -3,12 +3,12 @@ digraph g {
     bgcolor="transparent"
     rankdir=LR
 
-    node [shape=box color="#586e75" fontname="EBG,fzlz" fontcolor="#b58900" fontsize=16]
-    edge [arrowhead=vee color="#586e75" fontname="EBG,fzlz" fontcolor="#268bd2" fontsize=16 arrowsize=0.5]
+    node [shape=box color="#586e75" fontname="EBG,LXGW" fontcolor="#b58900" fontsize=16]
+    edge [arrowhead=vee color="#586e75" fontname="EBG,LXGW" fontcolor="#268bd2" fontsize=16 arrowsize=0.5]
 
     subgraph cluster_3 {
         label="数据呈现"
-        fontname="EBG,fzlz"
+        fontname="EBG,LXGW"
         color="#839496"
         fontcolor="#268bd2"
         style="dashed"
@@ -19,7 +19,7 @@ digraph g {
 
     subgraph cluster_2 {
         label="数据分析"
-        fontname="EBG,fzlz"
+        fontname="EBG,LXGW"
         color="#839496"
         fontcolor="#268bd2"
         style="dashed"
@@ -30,7 +30,7 @@ digraph g {
 
     subgraph cluster_1 {
         label="数据准备"
-        fontname="EBG,fzlz"
+        fontname="EBG,LXGW"
         color="#839496"
         fontcolor="#268bd2"
         style="dashed"

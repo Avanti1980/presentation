@@ -6,7 +6,7 @@
   }
 }
 
-@each $font in fzht, fzlz, fzsxs, EBG {
+@each $font in fzht, fzlz, fzsxs, LXGW, EBG {
   @include fontconfig($font);
 }
 
@@ -76,7 +76,7 @@
 }
 
 .reveal {
-  font-family: EBG, fzlz, fzht;
+  font-family: EBG, LXGW, fzlz, fzht;
   font-weight: normal;
   color: var(--solarized-base01);
 }
@@ -115,7 +115,7 @@
 .reveal h6,
 .reveal p {
   color: var(--solarized-base01);
-  font-family: EBG, fzlz, fzht;
+  font-family: EBG, LXGW, fzlz, fzht;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
@@ -156,7 +156,7 @@
 
 .reveal ul > li,
 .reveal ol > li {
-  font-family: EBG, fzlz, fzht;
+  font-family: EBG, LXGW, fzlz, fzht;
   color: var(--solarized-yellow);
 }
 
@@ -166,7 +166,7 @@
 }
 
 .reveal table {
-  font-family: EBG, fzlz, fzht;
+  font-family: EBG, LXGW, fzlz, fzht;
   table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 0;
@@ -282,7 +282,7 @@
 }
 
 .reveal .mermaid {
-  font-family: EBG, fzlz, fzht;
+  font-family: EBG, LXGW, fzlz, fzht;
 }
 
 .reveal .multi_column {
@@ -315,7 +315,7 @@
   display: block;
   position: relative;
   text-align: left;
-  font-family: Operator, fzlz;
+  font-family: Operator, LXGW, fzlz;
   word-wrap: break-word;
   background-color: transparent;
 }

@@ -4,8 +4,8 @@ digraph g {
     bgcolor="transparent"
     rankdir = LR
 
-    node [shape=circle color="#586e75" fontcolor="#859900" fontsize=16 fontname="fzlz" label=""]
-    edge [color="#839496" fontcolor="#839496" fontsize=12 fontname="fzlz" arrowhead=vee arrowsize=0.5]
+    node [shape=circle color="#586e75" fontcolor="#859900" fontsize=16 fontname="LXGW" label=""]
+    edge [color="#839496" fontcolor="#839496" fontsize=12 fontname="LXGW" arrowhead=vee arrowsize=0.5]
 
     subgraph cluster_1 {
         style=invis
@@ -14,7 +14,7 @@ digraph g {
             style="dashed"
             label="人"
             color="#839496"
-            fontname="fzlz"
+            fontname="LXGW"
             fontcolor="#268bd2"
             11
             12
@@ -24,7 +24,7 @@ digraph g {
             style="dashed"
             label="物"
             color="#839496"
-            fontname="fzlz"
+            fontname="LXGW"
             fontcolor="#268bd2"
             13
             14
@@ -40,7 +40,7 @@ digraph g {
             style="dashed"
             label="融合"
             color="#839496"
-            fontname="fzlz"
+            fontname="LXGW"
             fontcolor="#268bd2"
             41
             42

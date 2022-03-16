@@ -3,8 +3,8 @@ digraph g {
     graph [nodesep=1 ranksep=1]
     bgcolor="transparent"
 
-    node [shape=circle color="#586e75" fontcolor="#859900" fontsize=16 fontname="fzlz"]
-    edge [dir=none color="#839496" fontcolor="#839496" fontsize=14 fontname="fzlz"]
+    node [shape=circle color="#586e75" fontcolor="#859900" fontsize=16 fontname="LXGW"]
+    edge [dir=none color="#839496" fontcolor="#839496" fontsize=14 fontname="LXGW"]
 
     "?" -> C [label=" 朋友 "]
     C -> D [label=" 同事 "]

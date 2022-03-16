@@ -3,8 +3,8 @@ digraph g {
     graph [nodesep=0.8 ranksep=0.8]
     bgcolor="transparent"
 
-    node [shape=ellipse color="#586e75" fontcolor="#859900" fontsize=16 fontname="fzlz"]
-    edge [dir=none color="#839496" fontcolor="#839496" fontsize=12 fontname="fzlz"]
+    node [shape=ellipse color="#586e75" fontcolor="#859900" fontsize=16 fontname="LXGW"]
+    edge [dir=none color="#839496" fontcolor="#839496" fontsize=12 fontname="LXGW"]
 
     口罩
 

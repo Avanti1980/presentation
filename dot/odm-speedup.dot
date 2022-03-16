@@ -2,15 +2,15 @@ digraph g {
   graph [nodesep=0.5, ranksep=0.5]
   bgcolor="transparent"
 
-  node [shape=ellipse color="#586e75" fontcolor="#b58900" fontsize=16 fontname="EBG,fzlz"]
-  edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,fzlz" arrowsize=0.6]
+  node [shape=ellipse color="#586e75" fontcolor="#b58900" fontsize=16 fontname="EBG,LXGW"]
+  edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,LXGW" arrowsize=0.6]
 
   提高ODM的效率 -> {模型训练,模型更新,模型选择,模型复用}
 
   subgraph cluster_R {
     label="一个学习模型的完整生命周期"
     color="#586e75"
-    fontname="EBG,fzlz"
+    fontname="EBG,LXGW"
     fontcolor="#268bd2"
     style="dashed"
     模型训练 -> 模型更新 -> 模型选择 -> 模型复用 [constraint=false]

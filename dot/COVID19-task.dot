@@ -3,8 +3,8 @@ digraph g {
     graph [nodesep=0.4 ranksep=0.6]
     bgcolor="transparent"
 
-    node [shape=ellipse color="#586e75" fontcolor="#b58900" fontsize=16 fontname="fzlz"]
-    edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="fzlz" arrowsize=0.5]
+    node [shape=ellipse color="#586e75" fontcolor="#b58900" fontsize=16 fontname="LXGW"]
+    edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="LXGW" arrowsize=0.5]
 
     数据采集
 
@@ -12,7 +12,7 @@ digraph g {
 
     subgraph cluster_R {
         label="我们的主要任务"
-        fontname="EBG,fzlz"
+        fontname="EBG,LXGW"
         fontcolor="#268bd2"
         color="#839496"
         style="dashed"
