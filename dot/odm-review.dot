@@ -2,8 +2,8 @@ digraph g {
     graph [nodesep=0.3 ranksep=0.5]
     bgcolor="transparent"
 
-    node [shape=ellipse color="#586e75" fontcolor="#586e75" fontsize=16 fontname="EBG,LXGW"]
-    edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="EBG,LXGW" arrowsize=0.6]
+    node [shape=ellipse color="#586e75" fontcolor="#586e75" fontsize=16 fontname="LXGWWenKai"]
+    edge [arrowhead=vee color="#586e75" fontcolor="#268bd2" fontsize=16 fontname="LXGWWenKai" arrowsize=0.6]
 
     间隔：样本点到分界面的有向距离 -> 最小间隔 [headlabel="VC维理论" labeldistance=3.5 labelangle=55]
     间隔：样本点到分界面的有向距离 -> "间隔均值 间隔方差" [label="间隔理论"]
@@ -26,7 +26,7 @@ digraph g {
 
     subgraph cluster_1 {
         label="一点微小的工作"
-        fontname="EBG,LXGW"
+        fontname="LXGWWenKai"
         color="#586e75"
         fontcolor="#268bd2"
         style="dashed"

@@ -38,12 +38,12 @@ $weight-array: SemiLight, Regular, Medium;
   $weight: nth($weight-array, $i);
   @font-face {
     font-family: LXGWWenKai;
-    src: url("../fonts/LxgwBright-1.235/LXGWBright-#{$weight}.woff2");
+    src: url("../fonts/LxgwBright-4.158/LXGWBright-#{$weight}.woff2");
     font-weight: 100 * (3 * $i - 2);
   }
   @font-face {
     font-family: LXGWWenKai;
-    src: url("../fonts/LxgwBright-1.235/LXGWBright-#{$weight}Italic.woff2");
+    src: url("../fonts/LxgwBright-4.158/LXGWBright-#{$weight}Italic.woff2");
     font-style: italic;
     font-weight: 100 * (3 * $i - 2);
   }
@@ -227,7 +227,8 @@ table {
   tbody tr:nth-child(26),
   tbody tr:nth-child(30),
   tbody tr:nth-child(34),
-  tbody tr:nth-child(38) {
+  tbody tr:nth-child(38),
+  tbody tr:nth-child(42) {
     border-top: 1px dashed var(--solarized-base01);
   }
   tbody tr:nth-child(100) {

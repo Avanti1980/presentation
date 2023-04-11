@@ -8,6 +8,8 @@ presentation:
 @import "../common/css/font-awesome-4.7.0/css/font-awesome.css"
 @import "../common/css/style-color.css"
 @import "../common/css/margin.css"
+@import "../plugins/chalkboard/plugin.js"
+@import "../plugins/customcontrols/plugin.js"
 
 <!-- slide data-notes="各位专家老师下午好，我是张腾，我的教学竞赛题目是机器学习，首先是说课环节" -->
 <div class="header"><img class="hust"></div>

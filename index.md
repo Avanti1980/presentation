@@ -1,4 +1,3 @@
-@import "common/css/font-awesome-4.7.0/css/font-awesome.css"
 @import "common/css/index.css"
 
 [190529 谢夏老师班上讲人工智能](190529-ai-intro/190529-ai-intro.html)
@@ -22,3 +21,5 @@
 [211112 算法导论一道例题讲解](211112-alg/211112-alg.html)
 
 [220317 教学竞赛院系初赛](220317-teaching-competition/220317-teaching-competition.html)
+
+[230412 与微软亚研研讨会](230410-odm-intro/230410-odm-intro.html)

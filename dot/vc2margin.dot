@@ -1,8 +1,8 @@
 digraph g {
     graph [nodesep=0.35, ranksep=0.25]
     rankdir=LR
-    node [shape=plaintext fontname="EBG,LXGW" fontcolor="#b58900" fontsize=18]
-    edge [arrowhead=vee color="#586e75" fontname="EBG,LXGW" fontcolor="#268bd2" fontsize=12 arrowsize=0.5]
+    node [shape=plaintext fontname="LXGWWenKai" fontcolor="#b58900" fontsize=18]
+    edge [arrowhead=vee color="#586e75" fontname="LXGWWenKai" fontcolor="#268bd2" fontsize=16 arrowsize=0.5]
     bgcolor="transparent"
 
     限制假设空间 -> VC维

@@ -72,6 +72,11 @@
   margin-right: auto;
 }
 
+.reveal .multi_column {
+  display: flex;
+  flex-direction: row;
+}
+
 .reveal p .center {
   text-align: center !important;
 }
@@ -108,6 +113,14 @@
 #venn-entropy {
   width: 540px;
   height: 360px;
+}
+
+.reveal .theorem {
+  background-color: var(--solarized-base2);
+  border-radius: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding: 0.5rem 0;
 }
 
 .reveal .waveform {
