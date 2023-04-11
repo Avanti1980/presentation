@@ -14,10 +14,6 @@
 
 [210829 暑期工作会议](210829-annual/210829-annual.html)
 
-[210915 人大高瓴刘勇教授组讲最优间隔分布学习机](210915-odm-intro/210915-odm-intro.html)
-
-[211112 算法导论一道例题讲解](211112-alg/211112-alg.html)
-
 [211112 算法导论一道例题讲解](211112-alg/211112-alg.html)
 
 [220317 教学竞赛院系初赛](220317-teaching-competition/220317-teaching-competition.html)
