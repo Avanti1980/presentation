@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "最优间隔分布学习"
+  },
+  {
+    "id": 2,
+    "name": "全监督",
+    "parent": 1
+  },
+  {
+    "id": 3,
+    "name": "弱监督",
+    "parent": 1
+  },
+  {
+    "id": 4,
+    "name": "二分类 [KDD'14, TKDE'19]",
+    "parent": 2
+  },
+  {
+    "id": 5,
+    "name": "多分类 [ICML'17, TKDE'19]",
+    "parent": 2
+  },
+  {
+    "id": 6,
+    "name": "在线训练 [AAAI'20]",
+    "parent": 2
+  },
+  {
+    "id": 7,
+    "name": "大规模训练 [AAAI'19, IJCAI'23]",
+    "parent": 2
+  },
+  {
+    "id": 8,
+    "name": "聚类 [AAAI'18]  半监督聚类 [中国科学'22]",
+    "parent": 3
+  },
+  {
+    "id": 9,
+    "name": "半监督学习 [IJCAI'18]",
+    "parent": 3
+  },
+  {
+    "id": 10,
+    "name": "多示例学习 [IJCAI'20]",
+    "parent": 3
+  },
+  {
+    "id": 11,
+    "name": "正/未标记学习学习 [IJCAI'22, SDM'22]",
+    "parent": 3
+  }
+]
