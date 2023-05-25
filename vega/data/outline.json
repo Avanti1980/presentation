@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "最优间隔分布学习"
+    "name": "间隔分布优化"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
   },
   {
     "id": 4,
-    "name": "二分类 [KDD'14, TKDE'19]",
+    "name": "二分类 [KDD'14, TKDE'19, IJCAI'22]",
     "parent": 2
   },
   {
@@ -24,13 +24,8 @@
     "parent": 2
   },
   {
-    "id": 6,
-    "name": "在线训练 [AAAI'20]",
-    "parent": 2
-  },
-  {
     "id": 7,
-    "name": "大规模训练 [AAAI'19, IJCAI'23]",
+    "name": "训练加速 [AAAI'19, IJCAI'23]",
     "parent": 2
   },
   {
@@ -51,6 +46,11 @@
   {
     "id": 11,
     "name": "正/未标记学习学习 [IJCAI'22, SDM'22]",
+    "parent": 3
+  },
+  {
+    "id": 12,
+    "name": "偏多标记学习 [IJCAI'21]",
     "parent": 3
   }
 ]
