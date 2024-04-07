@@ -16,6 +16,6 @@
 
 [211112 算法导论一道例题讲解](211112-alg/211112-alg.html)
 
-[220317 教学竞赛院系初赛](220317-teaching-competition/220317-teaching-competition.html)
-
 [230412 与微软亚研研讨会](230410-odm-intro/230410-odm-intro.html)
+
+[240407 教学竞赛](240407-teaching-competition/240407-teaching-competition.html)
